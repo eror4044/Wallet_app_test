@@ -1,0 +1,19 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.sm-box {
+  border: 1px solid #ddd;
+  border-radius: $border-radius;
+  padding: 8px;
+  box-shadow: $box-shadow;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  p {
+    @include subtitle1;
+  }
+  .subtitle1{
+    @include subtitle1;
+  }
+}

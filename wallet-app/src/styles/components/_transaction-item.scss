@@ -1,0 +1,56 @@
+@use '../base/variables' as *;
+@use '../base/mixins' as *;
+
+.transaction-item {
+  padding: 12px 24px 12px 0px;
+  gap: 8px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  &:nth-child(1) {
+    border-bottom: 1px solid #ECECED;
+  }
+  .chevron-right {
+    position: absolute;
+    top: 12px;
+    right: 4px;
+  }
+  .image-wrapper {
+    .image {
+      padding: 12px;
+      background-color: #ddd;
+      border-radius: $border-radius;
+    }
+  }
+  .content {
+    display: flex;
+    justify-content: space-between;
+    @include subtitle1;
+    .percent{
+      font-size: 12px;
+      color: $secondary-color;
+      background: #F2F2F6;
+      padding: 4px;
+      border-radius: $border-radius;
+    }
+  }
+  .details {
+    width: 100%;
+    .header {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  .amount {
+    font-size: 1.1em;
+
+    &.credit {
+      color: $success-color;
+    }
+    &.debit {
+      color: $error-color;
+    }
+  }
+
+  
+}

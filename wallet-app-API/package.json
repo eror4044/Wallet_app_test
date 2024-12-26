@@ -1,0 +1,25 @@
+{
+  "scripts": {
+    "dev": "tsx watch ./server.ts",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "type": "module",
+  "dependencies": {
+    "concurrently": "^9.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "fontawesome": "^5.6.3",
+    "fs": "^0.0.1-security",
+    "nodemon": "^3.1.9",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.2",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
