@@ -1,0 +1,79 @@
+@use '../base/variables' as *;
+
+.transaction-details {
+  text-align: center;
+  margin: 20px;
+  font-family: "Arial", sans-serif;
+
+  .transaction-amount {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .transaction-merchant {
+    font-size: 18px;
+    color: #666;
+  }
+
+  .transaction-date {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 20px;
+  }
+
+  .transaction-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    text-align: left;
+    max-width: 90%;
+    margin: 0 auto;
+
+    .transaction-status {
+      font-size: 16px;
+      margin-bottom: 5px;
+
+      span {
+        font-weight: bold;
+      }
+    }
+
+    .transaction-method {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .transaction-total {
+      display: flex;
+      justify-content: space-between;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+
+  .loading,
+  .not-found {
+    font-size: 18px;
+    margin-top: 50px;
+    color: #888;
+  }
+}
+
+@media (max-width: 600px) {
+  .transaction-details {
+    .transaction-amount {
+      font-size: 36px;
+    }
+
+    .transaction-card {
+      padding: 12px;
+    }
+
+    .transaction-total {
+      font-size: 16px;
+    }
+  }
+}

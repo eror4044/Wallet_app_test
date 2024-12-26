@@ -1,0 +1,12 @@
+@use 'variables' as *;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin subtitle1 {
+  color: $secondary-color;
+  font-size: 13px;
+  font-weight: 500;
+}
