@@ -10,7 +10,7 @@ const TransactionDetails: React.FC = () => {
 
   useEffect(() => {
     axios
-      .get(`${process.env.REACT_APP_API_BASE_URL}/api/transactions/${id}`)
+      .get(`${process.env.VITE_API_URL}/api/transactions/${id}`)
       .then((response) => {
         setTransaction(response.data);
         setLoading(false);
