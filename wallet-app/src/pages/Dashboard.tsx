@@ -13,7 +13,7 @@ export const Dashboard: React.FC<Props> = () => {
 
   useEffect(() => {
     axios
-      .get(`${process.env.VITE_API_URL}/api/transactions`)
+      .get(`/api/transactions`)
       .then((response) => {
         setTransactions(response.data);
         setLoading(false);
