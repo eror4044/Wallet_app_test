@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dev": "tsx watch ./server.ts",
-    "build": "NODE_ENV=development vite build",
+    "build": "tsc",
     "serve": "vite preview",
     "start": "node dist/server.js"
   },
