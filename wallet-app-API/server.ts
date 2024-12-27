@@ -3,7 +3,9 @@ import fs from "fs";
 import path from "path";
 import cors from "cors";
 import { fileURLToPath } from "url";
+import dotenv from "dotenv";
 
+dotenv.config();
 const app = express();
 app.use(cors());
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -38,7 +40,7 @@ app.get("/api/transactions/:id", (req, res) => {
     }
   });
 });
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
