@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dev": "tsx watch ./server.ts",
-    "build": "vite build",
+    "build": "NODE_ENV=development vite build",
     "serve": "vite preview",
     "start": "node dist/server.js"
   },
@@ -14,7 +14,8 @@
     "fontawesome": "^5.6.3",
     "fs": "^0.0.1-security",
     "nodemon": "^3.1.9",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "vite": "^6.0.6"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
