@@ -7,4 +7,16 @@ export default defineConfig({
   build: {
     outDir: "dist",
   },
+  define: {
+    'process.env': process.env,
+  },
+  server: {
+    proxy: {
+      "/api": {
+        target: "https://walletapptest-production.up.railway.app",
+        changeOrigin: true,
+        secure: false,
+      },
+    },
+  },
 });
