@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import TransactionsList from "./components/TransactionsList";
 import './styles/main.scss';
 import TransactionDetails from "./pages/TransactionDetails";
 import { Dashboard } from "./pages/Dashboard";
