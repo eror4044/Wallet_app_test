@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const dataPath = path.resolve(__dirname, "./data/data.json");
+const dataPath = path.resolve(__dirname, "../data/data.json");
 interface Transaction {
   id: number;
   name: string;
