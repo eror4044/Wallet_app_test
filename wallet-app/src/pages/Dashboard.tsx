@@ -1,45 +1,52 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
-import TransactionsList from "../components/TransactionsList";
-import { Transaction } from "../interfaces/Transaction";
+import { useEffect } from "react";
 import { SmBox } from "../shared/sm_box";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "../store/store";
+import TransactionsList from "../components/TransactionsList";
+import {
+  fetchDashboardData,
+  fetchPaymentStatus,
+} from "../store/transactions/transactionsThunks";
+import DashboardSkeleton from "../components/skeleton/DashboardSkeleton";
 
 interface Props {}
 export const Dashboard: React.FC<Props> = () => {
-  const [transactions, setTransactions] = useState<Transaction[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  const dispatch = useDispatch<AppDispatch>();
+  const { dashboardData, paymentStatus, loading } = useSelector(
+    (state: RootState) => state.transactions
+  );
 
   useEffect(() => {
-    axios
-      .get(`${process.env.VITE_API_URL}/api/transactions`)
-      .then((response) => {
-        setTransactions(response.data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error("Error loading transactions:", error);
-        setLoading(false);
+    dispatch(fetchDashboardData())
+      .unwrap()
+      .then(() => {
+        dispatch(fetchPaymentStatus());
       });
-  }, []);
+  }, [dispatch]);
+
+  if (loading) {
+    return <DashboardSkeleton />;
+  }
+
   return (
     <div className="dashboard">
       <div className="info-wrapper">
         <SmBox>
           <p className="title1">Card Balance</p>
-          <h2>$17.30</h2>
-          <p className="">$1,722.30 Available</p>
+          <h2>${dashboardData?.balance}</h2>
+          <p className="">${dashboardData.available} Available</p>
         </SmBox>
         <SmBox className={"div3"}>
           <p className="title1">Daily Points</p>
-          <p className="">456K</p>
+          <p className="">{dashboardData.dailyPoints}K</p>
         </SmBox>
         <SmBox className={"div4"}>
           <div className="wrapper">
             <div>
               <p className="title1">No Payment Due</p>
-              <p>You`re paid your September balance</p>
+              <p>{loading ? "Loading..." : paymentStatus.month}</p>
             </div>
             <div className="mark-wrapper">
               <div className="mark">
@@ -49,7 +56,7 @@ export const Dashboard: React.FC<Props> = () => {
           </div>
         </SmBox>
       </div>
-      <TransactionsList transactions={transactions} loading={loading} />
+      <TransactionsList transactions={dashboardData.transactions} />
     </div>
   );
 };

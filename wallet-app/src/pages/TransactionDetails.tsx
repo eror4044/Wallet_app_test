@@ -1,25 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
-import { Transaction } from "../interfaces/Transaction";
+import { useDispatch, useSelector } from "react-redux";
+import { clearTransaction } from "../store/slices/transactionsSlice";
+import { AppDispatch, RootState } from "../store/store";
+import { fetchTransactionById } from "../store/transactions/transactionsThunks";
 
 const TransactionDetails: React.FC = () => {
   const { id } = useParams();
-  const [transaction, setTransaction] = useState<Transaction | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
+  const dispatch = useDispatch<AppDispatch>();
+  const { transaction, loading } = useSelector(
+    (state: RootState) => state.transactions
+  );
 
   useEffect(() => {
-    axios
-      .get(`${process.env.VITE_API_URL}/api/transactions/${id}`)
-      .then((response) => {
-        setTransaction(response.data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error("Error loading transaction details:", error);
-        setLoading(false);
-      });
-  }, [id]);
+    if (id) {
+      dispatch(fetchTransactionById(id));
+    }
+
+    return () => {
+      dispatch(clearTransaction());
+    };
+  }, [id, dispatch]);
 
   if (loading) return <p className="loading">Loading transaction details...</p>;
 

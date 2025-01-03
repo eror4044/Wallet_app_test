@@ -7,9 +7,12 @@
   display: flex;
   position: relative;
   align-items: center;
-  &:nth-child(1) {
-    border-bottom: 1px solid #ECECED;
+  border-bottom: 1px solid #ececed;
+
+  &:last-child {
+    border-bottom: none;
   }
+  
   .chevron-right {
     position: absolute;
     top: 12px;
@@ -26,10 +29,10 @@
     display: flex;
     justify-content: space-between;
     @include subtitle1;
-    .percent{
+    .percent {
       font-size: 12px;
       color: $secondary-color;
-      background: #F2F2F6;
+      background: #f2f2f6;
       padding: 4px;
       border-radius: $border-radius;
     }
@@ -51,6 +54,4 @@
       color: $error-color;
     }
   }
-
-  
 }
