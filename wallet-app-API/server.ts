@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 import cors from "cors";
 import { fileURLToPath } from "url";
-import { calculateDailyPoints } from "./utils";
+import { calculateDailyPoints } from "./utils.js";
 
 const app = express();
 app.use(cors());
