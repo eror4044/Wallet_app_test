@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { clearTransaction } from "../store/slices/transactionsSlice";
 import { AppDispatch, RootState } from "../store/store";
 import { fetchTransactionById } from "../store/transactions/transactionsThunks";
+import TransactionDetailsSkeleton from "../components/skeleton/TransactionDetailsSkeleton";
 
 const TransactionDetails: React.FC = () => {
   const { id } = useParams();
@@ -22,7 +23,9 @@ const TransactionDetails: React.FC = () => {
     };
   }, [id, dispatch]);
 
-  if (loading) return <p className="loading">Loading transaction details...</p>;
+  if (loading) {
+    return <TransactionDetailsSkeleton />;
+  }
 
   return transaction ? (
     <div className="transaction-details">
