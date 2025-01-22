@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Transaction } from "../interfaces/Transaction";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight, faThumbsUp } from "@fortawesome/free-solid-svg-icons";
+import { formatTransactionDate } from "../utils/transactionDate";
 
 interface Props {
   transaction: Transaction;
@@ -29,7 +30,9 @@ const TransactionItem: React.FC<Props> = ({ transaction }) => {
         <div className="content">
           <div>
             <p className="subtitle1">Status: {transaction.status}</p>
-            <p className="subtitle1">Date: {transaction.date}</p>
+            <p className="subtitle1">
+              Date: {formatTransactionDate(transaction.date)}
+            </p>
           </div>
           <div>
             <p className="percent">3%</p>

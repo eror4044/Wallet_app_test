@@ -1,0 +1,24 @@
+.transactions-list-wrapper-skeleton {
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+
+  .transaction-item {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    border-bottom: 1px solid #eaeaea;
+  }
+
+  .transaction-icon {
+    margin-right: 12px;
+  }
+
+  .transaction-details {
+    flex-grow: 1;
+  }
+
+  .transaction-amount {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+}

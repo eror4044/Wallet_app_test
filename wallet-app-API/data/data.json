@@ -16,5 +16,140 @@
     "status": "Completed",
     "date": "2024-12-20",
     "authorizedUser": "Alex"
+  },
+  {
+    "id": 3,
+    "name": "Amazon",
+    "amount": 35.5,
+    "type": "Debit",
+    "status": "Completed",
+    "date": "2024-12-19",
+    "authorizedUser": "John"
+  },
+  {
+    "id": 4,
+    "name": "Netflix",
+    "amount": 15.99,
+    "type": "Credit",
+    "status": "Pending",
+    "date": "2024-12-18",
+    "authorizedUser": "Emma"
+  },
+  {
+    "id": 5,
+    "name": "Starbucks",
+    "amount": 7.45,
+    "type": "Debit",
+    "status": "Completed",
+    "date": "2024-12-17",
+    "authorizedUser": "Michael"
+  },
+  {
+    "id": 6,
+    "name": "Walmart",
+    "amount": 42.78,
+    "type": "Credit",
+    "status": "Completed",
+    "date": "2024-12-16",
+    "authorizedUser": "Sophia"
+  },
+  {
+    "id": 7,
+    "name": "Spotify",
+    "amount": 10.99,
+    "type": "Debit",
+    "status": "Pending",
+    "date": "2024-12-15",
+    "authorizedUser": "Daniel"
+  },
+  {
+    "id": 8,
+    "name": "Nike",
+    "amount": 89.99,
+    "type": "Credit",
+    "status": "Completed",
+    "date": "2024-12-14",
+    "authorizedUser": "Lucas"
+  },
+  {
+    "id": 9,
+    "name": "Samsung",
+    "amount": 499.99,
+    "type": "Debit",
+    "status": "Completed",
+    "date": "2024-12-13",
+    "authorizedUser": "Olivia"
+  },
+  {
+    "id": 10,
+    "name": "Uber",
+    "amount": 23.4,
+    "type": "Credit",
+    "status": "Pending",
+    "date": "2024-12-12",
+    "authorizedUser": "Ethan"
+  },
+  {
+    "id": 11,
+    "name": "Adidas",
+    "amount": 75.25,
+    "type": "Debit",
+    "status": "Completed",
+    "date": "2024-12-11",
+    "authorizedUser": "Ava"
+  },
+  {
+    "id": 12,
+    "name": "McDonald's",
+    "amount": 12.3,
+    "type": "Credit",
+    "status": "Pending",
+    "date": "2024-12-10",
+    "authorizedUser": "Noah"
+  },
+  {
+    "id": 13,
+    "name": "Zara",
+    "amount": 55.6,
+    "type": "Debit",
+    "status": "Completed",
+    "date": "2024-12-09",
+    "authorizedUser": "Mia"
+  },
+  {
+    "id": 14,
+    "name": "Tesla",
+    "amount": 1500.0,
+    "type": "Credit",
+    "status": "Pending",
+    "date": "2024-12-08",
+    "authorizedUser": "James"
+  },
+  {
+    "id": 15,
+    "name": "Best Buy",
+    "amount": 230.45,
+    "type": "Debit",
+    "status": "Completed",
+    "date": "2025-1-02",
+    "authorizedUser": "Amelia"
+  },
+  {
+    "id": 16,
+    "name": "Sephora",
+    "amount": 65.3,
+    "type": "Credit",
+    "status": "Completed",
+    "date": "2024-12-06",
+    "authorizedUser": "Isabella"
+  },
+  {
+    "id": 17,
+    "name": "Apple",
+    "amount": 999.99,
+    "type": "Debit",
+    "status": "Pending",
+    "date": "2024-12-05",
+    "authorizedUser": "William"
   }
 ]
