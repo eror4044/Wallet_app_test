@@ -14,233 +14,50 @@ const dataPath = path.resolve(__dirname, "../data/data.json");
 const mockUsers = [
   {
     id: "1",
-    name: "John Doe",
     username: "johndoe",
     email: "johndoe@example.com",
-    phone: "123-456-7890",
-    website: "johndoe.com",
-    address: {
-      street: "Main St",
-      suite: "Apt. 101",
-      city: "New York",
-      zipcode: "10001",
-      geo: {
-        lat: "40.7128",
-        lng: "-74.0060",
-      },
-    },
-    company: {
-      name: "John's Tech",
-      catchPhrase: "Innovate your future",
-      bs: "technology solutions",
-    },
   },
   {
     id: "2",
-    name: "Jane Smith",
     username: "janesmith",
     email: "janesmith@example.com",
-    phone: "234-567-8901",
-    website: "janesmith.com",
-    address: {
-      street: "Park Ave",
-      suite: "Suite 202",
-      city: "Los Angeles",
-      zipcode: "90001",
-      geo: {
-        lat: "34.0522",
-        lng: "-118.2437",
-      },
-    },
-    company: {
-      name: "Smith Innovations",
-      catchPhrase: "Empowering the world",
-      bs: "business strategies",
-    },
   },
   {
     id: "3",
-    name: "Alice Johnson",
     username: "alicej",
     email: "alicej@example.com",
-    phone: "345-678-9012",
-    website: "alicejohnson.org",
-    address: {
-      street: "Broadway",
-      suite: "Apt. 303",
-      city: "Chicago",
-      zipcode: "60601",
-      geo: {
-        lat: "41.8781",
-        lng: "-87.6298",
-      },
-    },
-    company: {
-      name: "Johnson Tech",
-      catchPhrase: "Future-ready solutions",
-      bs: "software development",
-    },
   },
   {
     id: "4",
-    name: "Bob Williams",
     username: "bobw",
     email: "bobw@example.com",
-    phone: "456-789-0123",
-    website: "bobwilliams.net",
-    address: {
-      street: "5th Ave",
-      suite: "Suite 404",
-      city: "San Francisco",
-      zipcode: "94102",
-      geo: {
-        lat: "37.7749",
-        lng: "-122.4194",
-      },
-    },
-    company: {
-      name: "Williams Enterprises",
-      catchPhrase: "Innovate. Build. Deliver.",
-      bs: "enterprise solutions",
-    },
+  },
+];
+
+const mockAccounts = [
+  {
+    id: "101",
+    name: "Savings Account",
+    email: "savings@example.com",
+    owner: mockUsers[0],
   },
   {
-    id: "5",
-    name: "Chris Brown",
-    username: "chrisb",
-    email: "chrisb@example.com",
-    phone: "567-890-1234",
-    website: "chrisbrown.co",
-    address: {
-      street: "Elm St",
-      suite: "Apt. 505",
-      city: "Houston",
-      zipcode: "77001",
-      geo: {
-        lat: "29.7604",
-        lng: "-95.3698",
-      },
-    },
-    company: {
-      name: "Brown Innovations",
-      catchPhrase: "Redefining technology",
-      bs: "AI solutions",
-    },
+    id: "102",
+    name: "Checking Account",
+    email: "checking@example.com",
+    owner: mockUsers[1],
   },
   {
-    id: "6",
-    name: "Emily Davis",
-    username: "emilyd",
-    email: "emilyd@example.com",
-    phone: "678-901-2345",
-    website: "emilydavis.io",
-    address: {
-      street: "Pine St",
-      suite: "Suite 606",
-      city: "Seattle",
-      zipcode: "98101",
-      geo: {
-        lat: "47.6062",
-        lng: "-122.3321",
-      },
-    },
-    company: {
-      name: "Davis Solutions",
-      catchPhrase: "Simplifying the complex",
-      bs: "cloud computing",
-    },
+    id: "103",
+    name: "Business Account",
+    email: "business@example.com",
+    owner: mockUsers[2],
   },
   {
-    id: "7",
-    name: "Michael Wilson",
-    username: "mikew",
-    email: "mikew@example.com",
-    phone: "789-012-3456",
-    website: "michaelwilson.com",
-    address: {
-      street: "Oak St",
-      suite: "Apt. 707",
-      city: "Austin",
-      zipcode: "73301",
-      geo: {
-        lat: "30.2672",
-        lng: "-97.7431",
-      },
-    },
-    company: {
-      name: "Wilson Innovations",
-      catchPhrase: "Innovation through collaboration",
-      bs: "data science",
-    },
-  },
-  {
-    id: "8",
-    name: "Sarah Lee",
-    username: "sarahlee",
-    email: "sarahlee@example.com",
-    phone: "890-123-4567",
-    website: "sarahlee.me",
-    address: {
-      street: "Cedar St",
-      suite: "Suite 808",
-      city: "San Diego",
-      zipcode: "92101",
-      geo: {
-        lat: "32.7157",
-        lng: "-117.1611",
-      },
-    },
-    company: {
-      name: "Lee Enterprises",
-      catchPhrase: "Transforming the future",
-      bs: "logistics",
-    },
-  },
-  {
-    id: "9",
-    name: "David Martinez",
-    username: "davidm",
-    email: "davidm@example.com",
-    phone: "901-234-5678",
-    website: "davidmartinez.info",
-    address: {
-      street: "Maple St",
-      suite: "Apt. 909",
-      city: "Phoenix",
-      zipcode: "85001",
-      geo: {
-        lat: "33.4484",
-        lng: "-112.0740",
-      },
-    },
-    company: {
-      name: "Martinez Corp",
-      catchPhrase: "Think big. Act bigger.",
-      bs: "marketing strategies",
-    },
-  },
-  {
-    id: "10",
-    name: "Jessica White",
-    username: "jessicaw",
-    email: "jessicaw@example.com",
-    phone: "012-345-6789",
-    website: "jessicawhite.biz",
-    address: {
-      street: "Birch St",
-      suite: "Suite 1010",
-      city: "Miami",
-      zipcode: "33101",
-      geo: {
-        lat: "25.7617",
-        lng: "-80.1918",
-      },
-    },
-    company: {
-      name: "White Tech",
-      catchPhrase: "Empowering progress",
-      bs: "IT consulting",
-    },
+    id: "104",
+    name: "Joint Account",
+    email: "joint@example.com",
+    owner: mockUsers[3],
   },
 ];
 interface Transaction {
@@ -325,31 +142,31 @@ app.post("/auth/login", (req, res) => {
   }
 });
 
-app.get("/users/:id?", (req, res) => {
-  const userId = req.params.id || "";
+app.get("/accounts/:id?", (req, res) => {
+  const accountId = req.params.id || "";
 
-  const searchUsers = (query: string) => {
+  const searchAccounts = (query: string) => {
     const lowerCaseQuery = query.toLowerCase();
 
-    const matchingUsers = query
-      ? mockUsers.filter((user) => {
+    const matchingAccounts = query
+      ? mockAccounts.filter((account) => {
           return (
-            user.id.includes(lowerCaseQuery) ||
-            user.name.toLowerCase().includes(lowerCaseQuery) ||
-            user.email.toLowerCase().includes(lowerCaseQuery)
+            account.id.includes(lowerCaseQuery) ||
+            account.name.toLowerCase().includes(lowerCaseQuery) ||
+            account.email.toLowerCase().includes(lowerCaseQuery)
           );
         })
       : mockUsers;
 
-    return matchingUsers;
+    return matchingAccounts;
   };
 
-  const users = searchUsers(userId);
+  const accounts = searchAccounts(accountId);
 
-  if (users.length > 0) {
-    res.json(users);
+  if (accounts.length > 0) {
+    res.json(accounts);
   } else {
-    res.status(404).json({ error: "No users found" });
+    res.json([]);
   }
 });
 
@@ -395,12 +212,34 @@ app.delete("/api/transactions/:id", (req, res) => {
 app.get("/api/paymentStatus", (req, res) => {
   const today = new Date();
   const lastPaymentDate = new Date("2025-1-01");
-  const isPaid = today < new Date(lastPaymentDate.setMonth(lastPaymentDate.getMonth() + 1));
+  const isPaid =
+    today < new Date(lastPaymentDate.setMonth(lastPaymentDate.getMonth() + 1));
 
   res.json({
     status: isPaid ? "No Payment Due" : "Payment Due",
     month: isPaid ? "September" : "October",
   });
+});
+
+app.put("/accounts/:id?", (req: any, res: any) => {
+  console.log(req.params);
+
+  const { id } = req.params;
+  const updatedData = req.body;
+  const accountIndex = mockAccounts.findIndex((account) => account.id === id);
+
+  if (accountIndex === -1) {
+    return res
+      .status(200)
+      .json({ message: "Account not found", success: false });
+  }
+
+  mockAccounts[accountIndex] = {
+    ...mockAccounts[accountIndex],
+    ...updatedData,
+  };
+
+  res.json({ success: true });
 });
 
 const PORT = process.env.PORT || 5000;
